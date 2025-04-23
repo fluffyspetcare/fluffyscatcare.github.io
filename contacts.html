@@ -39,8 +39,18 @@
         <a href = "">Instagram</a>
 
         <script>
-            function checkOrientation() {
-                
+             function checkOrientation() { 
+                if (window.innerHeight < window.innerWidth) { 
+                    document.getElementById('landscape-warning').style.display = 'none'; 
+                    document.querySelector('.content').style.display = 'block'; 
+                } else { 
+                    document.getElementById('landscape-warning').style.display = 'block'; 
+                    document.querySelector('.content').style.display = 'none'; 
+                } 
+            }
+            window.addEventListener('resize', checkOrientation); 
+            window.addEventListener('orientationchange', checkOrientation); 
+            checkOrientation(); // Initial check 
         </script>
     </body>
 </html>
