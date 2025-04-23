@@ -29,9 +29,16 @@
             li{
                 font-size: 8vmin;
             }
+            .landscape-warning { 
+            display: none; 
+        } 
         </style>
     </head>
     <body>
+        <div class="landscape-warning" id="landscape-warning"> 
+        Please rotate your device to portrait mode. 
+    </div> 
+        
         <ul>
             <br>
             <li><a href = "contacts.html">Contact Me</a></li>
@@ -50,8 +57,20 @@
         <h1 style = "position: absolute; top: 7vh; right: 1vw">Alwoodley, Moortown,</h1>
         <h1 style = "position: absolute; top: 13vh; right: 1vw">Shadwell and Chapel</h1>
         <h1 style = "position: absolute; top: 19vh; right: 1vw">Allerton Area.</h1>
-        <script>
-            screen.orientation.lock("landscape");
-        </script>
+        <script> 
+        function checkOrientation() { 
+            if (window.innerHeight > window.innerWidth) { 
+                document.getElementById('landscape-warning').style.display = 'none'; 
+                document.querySelector('.content').style.display = 'block'; 
+            } else { 
+                document.getElementById('landscape-warning').style.display = 'block'; 
+                document.querySelector('.content').style.display = 'none'; 
+            } 
+        } 
+ 
+        window.addEventListener('resize', checkOrientation); 
+        window.addEventListener('orientationchange', checkOrientation); 
+        checkOrientation(); // Initial check 
+    </script> 
     </body>
 </html>
