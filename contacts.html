@@ -6,13 +6,13 @@
             body{
                 background-image: url("Images/background.png");
                 background-repeat: no-repeat;
-                background-size: 100% 100%;
+                background-size: 100vw 100vh;
                 scroll-behavior: smooth;
-                line-height: 120px;
+                line-height: 8vh;
             }
             a:link, a:visited{
                 color: black;
-                font-size: 40px;
+                font-size: 6vmin;
                 text-decoration: none;
                 font-family: "Comic Sans MS", fantasy;
             }
@@ -22,9 +22,14 @@
             a:active{
                 color: blue;
             }
+            .landscape-warning{
+                display: none;
+            }
         </style>
     </head>
     <body>
+        <div class="landscape-warning" id="landscape-warning">Please rotate your device to landscape mode.</div>
+        
         <a href = mailto:"fluffyspetcare@yahoo.com">Email: fluffyspetcare@yahoo.com</a>
         <br>
         <a href = "">Tel: 07545226682</a>
@@ -32,5 +37,10 @@
         <a href = "https://en-gb.facebook.com/profile.php?id=61574993128127&name=xhp_nt__fb__action__open_user">Our Facebook Page</a>
         <br>
         <a href = "">Instagram</a>
+
+        <script>
+            function checkOrientation() {
+                
+        </script>
     </body>
 </html>
